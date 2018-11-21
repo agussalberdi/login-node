@@ -97,7 +97,7 @@ form{
     align-items: center;
 }
 
-input[type="email"],input[type="password"],input[type="text"]{
+input[type="email"],input[type="password"],input[type="text"], textarea{
     border: none;
     border-radius: 10px;
     padding: 10px;
@@ -114,6 +114,10 @@ form .button{
     font-size: 20px;
     text-transform: uppercase;
     margin-top: 25px;
+}
+
+.redirect{
+    text-align: center;
 }
 
 .redirect a{
@@ -215,8 +219,20 @@ form#nuevo{
     width: 100%;
 }
 
-form#nuevo #mensaje{
-    height: 200px;
+form#nuevo #texto{
+    width: 100%;
+    resize: none;
+}
+
+/*enviado y error*/
+.mensaje{
+    width: 50%;
+    margin: 50px auto;
+    text-align: center;
+    padding: 10px;
+    font-size: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 /*footer*/
@@ -239,9 +255,3 @@ footer p:first-child{
     margin-bottom: 10px;
 }
 
-/*errores*/
-.alert{
-    background: red;
-    color: white;
-    text-align: center;
-}

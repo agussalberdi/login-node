@@ -8,15 +8,7 @@
     <% include partials/head %>
 </head>
 <body>
-    <header>
-        <div class="wrapper">
-            <div class="account">
-                <i class="fa fa-user"></i>
-                <p>Bienvenido: <strong><%= user.nombre %></strong></p>
-                <a href="/logout" class="button">Cerrar Sesión</a>
-            </div>
-        </div>
-    </header>
+    <% include partials/header %>
     <section id="profile">
         <div class="wrapper">
             <aside id="bandeja">
@@ -38,18 +30,13 @@
                 </div>
             </aside>
 
-            <form action="/enviado" method="POST" id="nuevo">
+            <form action="/enviar" method="POST" id="nuevo">
                 <input type="email" name="receptor" placeholder="Ingrese destinatario/s" required>
                 <input type="text" name="asunto" placeholder="Asunto" required>
-                <input type="text" name="mensaje" placeholder="Escribe aquí" id="mensaje" required>
+                <textarea name="mensaje" cols="30" rows="10" placeholder="Escribe aquí tu mensaje" id="texto" required></textarea>
                 <input type="submit" value="Enviar" class="button">
             </form>
 
-            <% if (message.lenght > 0){ %>
-            <div>
-                <%- message %> 
-            </div>
-            <% } %>
         </div>
     </section>
 

@@ -6,7 +6,8 @@ const router = express.Router();
 var User = require('../models/user');
 var Mail = require('../models/mail');
 
-router.post('/enviado', (req, res) => {
+
+router.post('/enviar', (req, res) => {
     let r = req.body;
     console.log(r);
 
@@ -14,7 +15,7 @@ router.post('/enviado', (req, res) => {
 
     promise.then(user =>{
         if (!user){
-            res.render('profile', {user: req.user, message: 'El destinatario no existe'});
+            res.redirect('/error');
         }
         else{
             const idReceptor = user._id;
@@ -25,7 +26,7 @@ router.post('/enviado', (req, res) => {
 
             promise
                 .then(mail => {
-                    res.render('enviado');
+                    res.redirect('/enviado');
                 })
                 .catch(err => {
                     console.log(err);
@@ -34,8 +35,12 @@ router.post('/enviado', (req, res) => {
     });
 });
 
+router.get('/error', (req, res) => {
+    res.render('error', {user: req.user});
+});
+
 router.get('/enviado', (req, res) =>{
-    res.render('enviado');
+    res.render('enviado', {user: req.user});
 });
 
 module.exports = router;

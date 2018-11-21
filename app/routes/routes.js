@@ -34,8 +34,7 @@ module.exports = (app, passport) => {
     //perfil
     app.get('/profile', isLoggedIn, (req,res) =>{
         res.render('profile',{
-            user: req.user,
-            message: null
+            user: req.user
         });
     });
 
