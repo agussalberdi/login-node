@@ -1,0 +1,247 @@
+body{
+    width: 100%;
+    max-width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 2px;
+}
+
+.wrapper{
+    position: relative;
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+section{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 80px 0;
+}
+/*index*/
+#hero{
+    height: 80vh;
+    background: url(../img/fondo.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.index{
+    display: block;
+    background: #243036;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    border-radius: 20px;
+    opacity: 0.9;
+}
+
+.index h1{
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.button{
+    position: relative;
+    display: inline-block;
+    background-color: #30383F;
+    color: #8a9398;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    line-height: 2;
+    font-weight: 600;
+    transition: all 500ms;
+}
+
+.index .button i{
+    position: relative;
+    display: inline-block;
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+.button:hover{
+    background-color: #FF4B8A;
+    color: white;
+}
+
+/*signup*/
+#signup{
+    background: url(../img/signup.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container{
+    display: block;
+    background: #243036;
+    color: white;
+    padding: 100px 50px;
+    border-radius: 20px;
+    opacity: 0.8;
+}
+
+.container h1{
+    text-align: center;
+    font-size: 30px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="email"],input[type="password"],input[type="text"]{
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    width: 250px;
+    margin-top: 10px;
+}
+
+label{
+    margin-top: 15px;
+}
+
+form .button{
+    width: 100px;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-top: 25px;
+}
+
+.redirect a{
+    color: #17a2b8;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.redirect a:hover{
+    color: #FF4B8A;
+}
+
+/*login*/
+#login{
+    background: url(../img/signup.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*profile*/
+header{
+    background-color: #17a2b8;
+    color: white;
+    padding: 30px 0;
+}
+
+.account{
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+.account i,p,a{
+    position: relative;
+    display: inline-block;
+}
+
+#profile{
+    background-color: #171718;
+}
+
+#profile .wrapper{
+    width: 95%;
+}
+
+#bandeja{
+    position: relative;
+    display: inline-block;
+    width: 30%;
+    float: left;
+}
+
+#logo{
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+}
+
+#logo > span{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+#logo > img{
+    display: inline-block;
+    vertical-align: middle;
+    width: 70px;
+}
+
+.redactar, .recibidos, .enviados{
+    display: block;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    vertical-align: middle;
+    transition: all 500ms;
+
+}
+
+.redactar a:hover, .recibidos a:hover, .enviados a:hover{
+    color: #17a2b8;
+}
+
+form#nuevo{
+    position: relative;
+    display: none;
+    width: 60%;
+    flex-direction: column;
+    align-items: center;
+}
+
+#nuevo input[type="email"], #nuevo input[type="text"]{
+    width: 100%;
+}
+
+form#nuevo #mensaje{
+    height: 200px;
+}
+
+/*footer*/
+footer{
+    position: relative;
+    display: block;
+    width: 100%;
+    background: #222222;
+    height: 20vh;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p{
+    font-size: 20px;
+}
+
+footer p:first-child{
+    margin-bottom: 10px;
+}
+
+/*errores*/
+.alert{
+    background: red;
+    color: white;
+    text-align: center;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile Page</title>
+    <% include partials/head %>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="account">
+                <i class="fa fa-user"></i>
+                <p>Bienvenido: <strong><%= user.nombre %></strong></p>
+                <a href="/logout" class="button">Cerrar Sesión</a>
+            </div>
+        </div>
+    </header>
+    <section id="profile">
+        <div class="wrapper">
+            <aside id="bandeja">
+                <div id="logo">
+                    <img src="img/mail.png" alt="">
+                    <span>Mail</span>
+                </div>
+                <div class="redactar">
+                    <i class="fas fa-plus"></i>
+                    <a href="#">Redactar Mail</a>
+                </div>
+                <div class="recibidos">
+                    <i class="fas fa-envelope"></i>
+                    <a href="#">Recibidos</a>
+                </div>
+                <div class="enviados">
+                    <i class="fas fa-location-arrow"></i>
+                    <a href="#">Enviados</a>
+                </div>
+            </aside>
+
+            <form action="/enviado" method="POST" id="nuevo">
+                <input type="email" name="receptor" placeholder="Ingrese destinatario/s" required>
+                <input type="text" name="asunto" placeholder="Asunto" required>
+                <input type="text" name="mensaje" placeholder="Escribe aquí" id="mensaje" required>
+                <input type="submit" value="Enviar" class="button">
+            </form>
+
+            <% if (message.lenght > 0){ %>
+            <div>
+                <%- message %> 
+            </div>
+            <% } %>
+        </div>
+    </section>
+
+    <% include partials/footer %>
+</body>
+</html>
