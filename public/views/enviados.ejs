@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Enviados</title>
+    <% include partials/head %>
+</head>
+<body>
+    <% include partials/header %>
+    <section id="enviados">
+        <h2 class="mensaje">Mails enviados</h2>
+        <ul class="listado">
+            <% for(var i=0; i < enviados.length; i++) { %>
+                <li>
+                    <div>
+                        <span>Asunto: </span>
+                        <span><strong><%= enviados[i].asunto %></strong></span>
+                    </div>
+                    <div>
+                        <span>Mensaje: </span>
+                        <span><strong><%- enviados[i].mensaje %></strong></span>
+                    </div>
+                    <div>
+                        <span>Emisor del mail: </span>
+                        <span><strong><%= enviados[i].emisor %></strong></span>
+                    </div>
+                    <div>
+                        <span>Receptor del mail: </span>
+                        <span><strong><%= enviados[i].receptor %></strong></span>
+                    </div>
+                </li>
+            <% } %>
+        </ul>
+    </section>
+
+    <% include partials/footer %>
+</body>
+</html>

@@ -19,7 +19,9 @@ router.post('/enviar', (req, res) => {
         }
         else{
             const idReceptor = user._id;
-            r.emisor = req.id_user;
+            r.emisor = req.user; //req.id_user; 
+            console.log(r.emisor);
+
             r.receptor = [idReceptor];
             let newMail = new Mail(r);
             let promise = newMail.save();
@@ -42,5 +44,33 @@ router.get('/error', (req, res) => {
 router.get('/enviado', (req, res) =>{
     res.render('enviado', {user: req.user});
 });
+
+router.get('/recibidos', (req, res) =>{
+    //let usuario = User.findOne({id: req.user._id});
+    let mails = Mail.find({receptor: req.user})
+        .then(recibidos =>{
+            if (!recibidos){
+                res.redirect('/error');
+            }
+            else{
+                res.render('recibidos', {user: req.user, recibidos: recibidos});
+                console.log(recibidos);
+            }
+        });
+});
+
+router.get('/enviados', (req, res) =>{
+    let mails = Mail.find({emisor: req.user})
+        .then(enviados =>{
+            if (!enviados){
+                res.redirect('/error');
+            }
+            else{
+                res.render('enviados', {user: req.user, enviados: enviados});
+                console.log(enviados);
+            }
+        });
+});
+
 
 module.exports = router;
