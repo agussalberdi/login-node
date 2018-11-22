@@ -130,6 +130,10 @@ form .button{
     color: #FF4B8A;
 }
 
+#recibidos .redirect, #enviados .redirect{
+    color: white;
+    margin-top: 15px;
+}
 /*login*/
 #login{
     background: url(../img/signup.jpg);
@@ -286,3 +290,11 @@ footer p{
     line-height: 4.5;
 }
 
+.alert{
+    color: red;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 10px;
+    font-weight: bolder;
+}

@@ -19,7 +19,7 @@ router.post('/enviar', (req, res) => {
         }
         else{
             const idReceptor = user._id;
-            r.emisor = req.user; //req.id_user; 
+            r.emisor = req.user; 
             console.log(r.emisor);
 
             r.receptor = [idReceptor];
@@ -46,7 +46,6 @@ router.get('/enviado', (req, res) =>{
 });
 
 router.get('/recibidos', (req, res) =>{
-    //let usuario = User.findOne({id: req.user._id});
     let mails = Mail.find({receptor: req.user})
         .then(recibidos =>{
             if (!recibidos){

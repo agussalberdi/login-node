@@ -31,9 +31,15 @@
                 <hr>
 
                 <div class="redirect">
-                    <p>Need an account? <a href="/signup">Signup</a></p>
-                    <p>Or go <a href="/">Home</a>.</p>
+                    <p>¿Ya tienes una cuenta? <a href="/login">Login</a></p>
+                    <p>O volver a <a href="/">Home</a>.</p>
                 </div>
+
+                <% if (message) { %>
+                <div class="alert">
+                    <%= message %>
+                </div>
+                <% } %>
             </div>
         </div>
     </section>
